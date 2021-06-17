@@ -1,14 +1,16 @@
 import { useRouter, BlitzPage, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { SignupForm } from "app/auth/components/SignupForm"
-
+import { Center, Box } from "@chakra-ui/layout"
 const SignupPage: BlitzPage = () => {
   const router = useRouter()
 
   return (
-    <div>
-      <SignupForm onSuccess={() => router.push(Routes.Home())} />
-    </div>
+    <Box my="6">
+      <Center>
+        <SignupForm onSuccess={() => router.push(Routes.Home())} />
+      </Center>
+    </Box>
   )
 }
 

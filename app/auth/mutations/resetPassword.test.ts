@@ -69,7 +69,7 @@ describe("resetPassword mutation", () => {
       mockCtx
     )
 
-    // Delete's the token
+    // Deletes the token
     const numberOfTokens = await db.token.count({ where: { userId: user.id } })
     expect(numberOfTokens).toBe(0)
 

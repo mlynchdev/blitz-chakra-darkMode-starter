@@ -45,7 +45,7 @@ describe("forgotPassword mutation", () => {
     if (!user.tokens[0]) throw new Error("Missing user token")
     if (!token) throw new Error("Missing token")
 
-    // delete's existing tokens
+    // deletes existing tokens
     expect(tokens.length).toBe(1)
 
     expect(token.id).not.toBe(user.tokens[0].id)
