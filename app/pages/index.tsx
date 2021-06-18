@@ -3,8 +3,7 @@ import { Link, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import logout from "app/auth/mutations/logout"
-import { Box, Center, Button, ButtonGroup, useColorMode, IconButton } from "@chakra-ui/react"
-import { FaSun, FaMoon } from "react-icons/fa"
+import { Center, Button, ButtonGroup } from "@chakra-ui/react"
 /*
  * This file is just for a pleasant getting started page for your new app.
  * You can delete everything in here and start from scratch if you like.
@@ -52,15 +51,8 @@ const UserInfo = () => {
 }
 
 const Home: BlitzPage = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <main>
-      <IconButton
-        aria-label="dark mode"
-        icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
-        alignSelf="flex-end"
-        onClick={toggleColorMode}
-      />
       <Center>
         <Suspense fallback="Loading...">
           <UserInfo />
