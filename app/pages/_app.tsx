@@ -10,7 +10,7 @@ import {
 import { ErrorBoundary } from "react-error-boundary"
 import LoginForm from "app/auth/components/LoginForm"
 import { Suspense } from "react"
-import { myTheme } from "../utils/theme/theme"
+import myTheme from "../utils/theme/theme"
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react"
 
 export default function App({ Component, pageProps }: AppProps) {

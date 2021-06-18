@@ -1,6 +1,7 @@
 import { extendTheme } from "@chakra-ui/react"
+import { mode } from "@chakra-ui/theme-tools"
 
-export const myTheme = extendTheme({
+const myTheme = extendTheme({
   colors: {
     primary: "#845Ec2",
     secondary: "#ff6f91",
@@ -9,4 +10,17 @@ export const myTheme = extendTheme({
     danger: "#c34a36",
     success: "#4BB543",
   },
+  // Global default overrides are done below in styles.global object
+  styles: {
+    global: (props) => ({
+      body: {
+        color: mode("gray.800", "whiteAlpha.900")(props),
+        bg: mode("white", "gray.700")(props),
+        lineHeight: "base",
+      },
+    }),
+  },
+  fonts: {},
 })
+
+export default myTheme
